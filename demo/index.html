@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1" />
+	<title>jQuery Mobile InlineTabs Demo</title>
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link rel="stylesheet" href="../jqm-inlinetabs.css" />
+	<script src="../jqm-inlinetabs.js"></script>
+	
+	
+	<script>
+	$(document).on('vclick', '#addtab', function() {
+		$('#tabbar').append('<li data-tab="1">links to content 1</li> ');
+		$('#tabcontainer').inlinetabs('refresh');
+	});
+	
+	$(document).on('vclick', '#acttab2', function() {
+		$('#tabcontainer').inlinetabs('show', '2');
+	});
+	
+	$(document).on('vclick', '#removetab', function() {
+		$('#tabbar').children().last().remove();
+		$('#tabcontainer').inlinetabs('refresh');
+	});
+	
+	$(document).on('tab-show', '#dynamictab', function() {
+		$(this).html('This content was dynamically injected.');
+	});
+	</script>
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="content">
+		<h1>jQuery Mobile InlineTabs Demo</h1>
+
+		<div data-role="inlinetabs" data-content-theme="c" id="tabcontainer">
+			<ul id="tabbar">
+				<li data-tab="1">First tab</li>
+				<li data-tab="2">Second tab</li>
+				<li data-tab="3">Dynamic tab</li>
+				<li class="ui-disabled">Disabled tab</li>
+			</ul>
+			
+			<div data-tab="1">
+				Content of Tab 1
+			</div>
+			
+			<div data-tab="2">
+				Content of Tab 2
+			</div>
+			
+			<div data-tab="3" id="dynamictab"></div>
+		</div>
+	
+	
+		<a id="addtab" data-role="button" data-inline="true">Add tab</a>
+		<a id="acttab2" data-role="button" data-inline="true">Activate tab 2</a>
+		<a id="removetab" data-role="button" data-inline="true">Remove last tab</a>
+		
+		
+		
+		<h2>Themes, icons and layout options</h2>
+		
+		
+		<h4>Basic tabs without additional markup</h4>
+		
+		<div data-role="inlinetabs">
+			<ul>
+				<li data-tab="1">First tab</li>
+				<li data-tab="2">Second tab</li>
+			</ul>
+			
+			<div data-tab="1">
+				Content of Tab 1
+			</div>
+			
+			<div data-tab="2">
+				Content of Tab 2
+			</div>
+		</div>
+		
+		
+		<h4>Themed tabs</h4>
+		
+		<div data-role="inlinetabs" data-theme="a" data-content-theme="c" data-tab-theme="e">
+			<ul>
+				<li data-tab="1">First tab</li>
+				<li data-tab="2" data-active="true">Second tab</li>
+				<li data-tab="3" data-theme="d">Third tab (different theme)</li>
+			</ul>
+			
+			<div data-tab="1">
+				Content of Tab 1
+			</div>
+			
+			<div data-tab="2">
+				Content of Tab 2
+			</div>
+			
+			<div data-tab="3">
+				Content of Tab 3
+			</div>
+		</div>
+		
+		
+		<h4>Mini tabs with icons</h4>
+		
+		<div data-role="inlinetabs" data-content-theme="c" data-mini="true">
+			<ul>
+				<li data-tab="1" data-icon="home">First tab</li>
+				<li data-tab="2" data-icon="gear" data-iconpos="right">Second tab</li>
+			</ul>
+			
+			<div data-tab="1">
+				Content of Tab 1
+			</div>
+			
+			<div data-tab="2">
+				Content of Tab 2
+			</div>
+		</div>
+		
+		<h4>Additional content in tab bar</h4>
+		
+		<div data-role="inlinetabs" data-content-theme="c">
+			<div>
+				<a data-tab-ignore="true" data-role="button" data-inline="true" data-mini="true" style="float:right">does nothing</a>
+				
+				<a data-tab="1">First tab</a>
+				<a data-tab="2">Second tab</a>
+				
+				
+			</div>
+			
+			<a data-tab-ignore="true" data-role="button" data-inline="true" data-mini="true" style="float:right">also does nothing</a>
+			
+			<div data-tab="1">
+				Content of Tab 1
+			</div>
+			
+			<div data-tab="2">
+				Content of Tab 2
+			</div>
+		</div>
+		
+		
+		<h4>Touch-scrollable tabs</h4>
+		
+		<div data-role="inlinetabs" data-theme="c" data-content-theme="c" data-scroll="true">
+			<ul>
+				<li data-tab="1">First tab with a very long label</li>
+				<li data-tab="2">Second tab with a very long label</li>
+				<li data-tab="3">Third tab with a very long label</li>
+				<li data-tab="4">Fourth tab with a very long label</li>
+			</ul>
+			
+			<div data-tab="1">
+				Content of Tab 1
+			</div>
+			
+			<div data-tab="2">
+				Content of Tab 2
+			</div>
+			
+			<div data-tab="3">
+				Content of Tab 3
+			</div>
+			
+			<div data-tab="4">
+				Content of Tab 4
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+
+</body>
+</html>
