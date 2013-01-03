@@ -24,8 +24,8 @@ The InlineTabs widget requires the jQuery and jQuery Mobile libraries to be incl
 
 The widget itself consists of one JavaScript and one CSS file. The JavaScript file has to be included *after* the files for jQuery and jQuery Mobile, the CSS file is best put in the `<head>` of the document.
 	
-	<link rel="stylesheet" href="jqm-inlinetabs.css" />
-	<script src="jqm-inlinetabs.js"></script>
+	<link rel="stylesheet" href="jqm-inlinetabs.min.css" />
+	<script src="jqm-inlinetabs.min.js"></script>
 
 
 The widget is invoked with `data-role="inlinetabs"` on a container element.
