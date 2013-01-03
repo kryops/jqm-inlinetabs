@@ -1,3 +1,11 @@
+/*
+ * jQuery Mobile InlineTabs
+ * (c) 2012 Michael Strobel
+ * Licensed under MIT
+ * 
+ * https://github.com/kryops/jqm-inlinetabs
+ */
+
 (function( $, undefined ) {
 
 $.widget( "mobile.inlinetabs", $.mobile.widget, {
