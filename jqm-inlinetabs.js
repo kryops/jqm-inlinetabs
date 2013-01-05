@@ -37,10 +37,8 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 			$tabbar = $element.children(':not(:jqmData(tab-ignore))').first(),
 			$tabs = $tabbar.children(':not(:jqmData(tab-ignore))'),
 			$content = $element.children(':gt(0):not(:jqmData(tab-ignore))'),
-			$container = $content.wrapAll('<div class="ui-inlinetabs-container" />').parent();
-			
+			$container = $content.wrapAll('<div class="ui-inlinetabs-container" />').parent(),
 			$activeTab = $tabs.filter(create ? ":jqmData(active)" : "." + o.activeClass).first(),
-			
 			o = this.options;
 		
 		/*
