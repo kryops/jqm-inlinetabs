@@ -49,5 +49,16 @@
 
 .ui-inlinetabs-container-top {
 	border-top: none;
-	margin-top: 0;	
+	margin-top: 0;
+	-webkit-border-top-right-radius: 0;  
+	border-top-right-radius: 0;
+	-webkit-top-bottom-left-radius: 0;  
+	border-top-left-radius: 0;
+}
+
+.ui-inlinetabs-corner-top, .ui-inlinetabs-tab {
+	-webkit-border-bottom-right-radius: 0;  
+	border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;  
+	border-bottom-left-radius: 0;
 }

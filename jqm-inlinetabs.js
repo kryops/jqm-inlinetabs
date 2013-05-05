@@ -46,6 +46,8 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 		 */
 		 
 		// Tabbar
+		$tabbar.addClass('ui-inlinetabs-bar ui-corner-all');
+		
 		if(o.theme) {
 			$tabbar.addClass('ui-bar-' + o.theme);
 		}
@@ -55,8 +57,9 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 		if(o.scroll) {
 			$tabbar.addClass('ui-inlinetabs-scroll');
 		}
-		$tabbar.addClass('ui-inlinetabs-bar')
-			.addClass(o.contentTheme ? 'ui-corner-top' : 'ui-corner-all');
+		if(o.contentTheme) {
+			$tabbar.addClass('ui-inlinetabs-corner-top');
+		}
 		
 		// Tabs
 		if(!$activeTab.length) {
@@ -76,7 +79,7 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 					iconpos: $this.jqmData('icon') ? ($this.jqmData('iconpos') || o.iconpos) : undefined,
 					mini: o.mini
 				})
-				.addClass('ui-corner-top ui-inlinetabs-tab');
+				.addClass('ui-corner-all ui-inlinetabs-tab');
 			}
 		});
 		
@@ -90,8 +93,11 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 		var $activeContent = $activeTab.jqmData('tab') ? $content.filter(":jqmData(tab='" + $activeTab.jqmData('tab') + "')") : null;
 		
 		if(o.contentTheme) {
-			$container.addClass('ui-body-' + o.contentTheme)
-					.addClass(o.theme ? 'ui-corner-bottom ui-inlinetabs-container-top' : 'ui-corner-all');
+			$container.addClass('ui-corner-all ui-body-' + o.contentTheme);
+			
+			if(o.theme) {
+				$container.addClass('ui-inlinetabs-container-top');
+			}
 		}
 		
 		$content.addClass('ui-inlinetabs-content')
@@ -172,15 +178,13 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 					return;
 				}
 				
-				console.log(delta);
-				
 				var $this = $(this);
 				
 				$this.scrollLeft($this.scrollLeft() - delta*50);
 				event.preventDefault();
 			});
 			
-			$(document).on("vmouseup", function() {
+			$.mobile.document.on("vmouseup", function() {
 				$tabbar.jqmRemoveData('scrollpos');
 			});
 		}
@@ -192,7 +196,7 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 });
 
 //auto self-init widgets
-$( document ).bind( "pagecreate create", function( e ) {
+$.mobile.document.bind( "pagecreate create", function( e ) {
 	$.mobile.inlinetabs.prototype.enhanceWithin( e.target );
 });
 

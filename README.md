@@ -15,11 +15,11 @@ It is targeted for web applications specifically desgined for tablet devices.
 
 ## Usage
 
-The InlineTabs widget requires the jQuery and jQuery Mobile libraries to be included:
+The InlineTabs widget requires the jQuery and jQuery Mobile libraries to be included (jQuery Mobile 1.3 required):
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
 
 
 The widget itself consists of one JavaScript and one CSS file. The JavaScript file has to be included *after* the files for jQuery and jQuery Mobile, the CSS file is best put in the `<head>` of the document.
