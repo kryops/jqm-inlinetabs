@@ -1,6 +1,6 @@
 /*
  * jQuery Mobile InlineTabs
- * (c) 2012 Michael Strobel
+ * (c) 2012-2015 Michael Strobel
  * Licensed under MIT
  * 
  * https://github.com/kryops/jqm-inlinetabs
@@ -39,7 +39,8 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 			$content = $element.children(':gt(0):not(:jqmData(tab-ignore))'),
 			$container = $content.wrapAll('<div class="ui-inlinetabs-container" />').parent(),
 			o = this.options,
-			$activeTab = $tabs.filter(create ? ":jqmData(active)" : "." + o.activeClass).first();
+			$activeTab = $tabs.filter(create ? ":jqmData(active)" : "." + o.activeClass).first(),
+			$this;
 		
 		/*
 		 * CSS enhancement
@@ -93,7 +94,7 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 		var $activeContent = $activeTab.jqmData('tab') ? $content.filter(":jqmData(tab='" + $activeTab.jqmData('tab') + "')") : null;
 		
 		if(o.contentTheme) {
-			$container.addClass('ui-corner-all ui-body-' + o.contentTheme);
+			$container.addClass('ui-corner-all ui-body ui-body-' + o.contentTheme);
 			
 			if(o.theme) {
 				$container.addClass('ui-inlinetabs-container-top');
@@ -119,7 +120,7 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 		$tabbar.on("vclick.inlinetabs", ".ui-inlinetabs-tab", function( event ) {
 			if ( !$(event.target).hasClass( "ui-disabled" ) ) {
 				
-				$this = $(this);
+				var $this = $(this);
 				
 				$tabs.removeClass(o.activeClass);
 				
@@ -195,9 +196,5 @@ $.widget( "mobile.inlinetabs", $.mobile.widget, {
 	}
 });
 
-//auto self-init widgets
-$.mobile.document.bind( "pagecreate create", function( e ) {
-	$.mobile.inlinetabs.prototype.enhanceWithin( e.target );
-});
 
 })( jQuery );

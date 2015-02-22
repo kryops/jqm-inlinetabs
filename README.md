@@ -7,19 +7,69 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 Demo page: <http://kryops.de/jqm/tabs/demo>
 
 
+___________________________________
+
+
+## !!! Can be replaced by the native jQuery Mobile tabs widget since 1.4 !!!
+
+[jQuery Mobile demo page](http://demos.jquerymobile.com/1.4.5/tabs/)
+
+To generate a similar look&feel like with the InlineTabs widget, just give the tabs container a custom class and play around with the CSS like that:
+
+```html
+<div data-role="tabs" id="tabs" class="inlinetabs">
+```
+
+
+```css
+.inlinetabs .ui-navbar {
+	padding: 0 8px;
+}
+
+.inlinetabs .ui-tabs-nav > li {
+	margin: 0 2px;
+	width: auto;
+	clear: none;
+}
+
+.inlinetabs .ui-tabs-nav .ui-btn {
+	border: 1px solid #ddd;
+	border-bottom: none;
+	border-top-left-radius: .6em;
+	border-top-right-radius: .6em;
+}
+
+.inlinetabs .ui-tabs-panel {
+	background: #fff;
+	border-radius: .6em;
+	border: 1px solid #ddd;
+}
+```
+
+___________________________________
+
+
+
 ## About
 
 The InlineTabs widget is an extension for the [jQuery Mobile Framework](http://jquerymobile.com).   
 It is targeted for web applications specifically desgined for tablet devices.
 
+Current version for jQuery Mobile 1.4
+
+**Older versions**;
+
+*   [jQuery Mobile 1.3 version](https://github.com/kryops/jqm-inlinetabs/tree/c89276c27ad56b9bcca64cdd5adae3c9d626613b)
+*   [jQuery Mobile 1.2 version](https://github.com/kryops/jqm-inlinetabs/tree/8fce1603a8c7c2c20d9e4d20fe4e47a24187a351)
+
 
 ## Usage
 
-The InlineTabs widget requires the jQuery and jQuery Mobile libraries to be included (jQuery Mobile 1.3 required):
+The InlineTabs widget requires the jQuery and jQuery Mobile libraries to be included:
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 
 The widget itself consists of one JavaScript and one CSS file. The JavaScript file has to be included *after* the files for jQuery and jQuery Mobile, the CSS file is best put in the `<head>` of the document.
